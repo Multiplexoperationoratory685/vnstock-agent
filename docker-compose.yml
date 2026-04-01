@@ -1,0 +1,11 @@
+services:
+  vnstock-mcp:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - VNSTOCK_API_KEY=${VNSTOCK_API_KEY}
+      - VNSTOCK_MCP_TRANSPORT=sse
+      - VNSTOCK_MCP_HOST=0.0.0.0
+      - VNSTOCK_MCP_PORT=8000
+    restart: unless-stopped
