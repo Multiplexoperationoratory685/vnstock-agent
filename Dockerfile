@@ -1,11 +1,11 @@
-FROM python:3.12-slim
+FROM python:3.12-alpine
 
 WORKDIR /app
 
 COPY pyproject.toml .
 COPY src/ src/
 
-RUN pip install --no-cache-dir .
+RUN apk add --no-cache gcc musl-dev python3-dev && pip install --no-cache-dir . && apk del gcc musl-dev python3-dev
 
 ENV VNSTOCK_API_KEY=""
 ENV VNSTOCK_MCP_TRANSPORT="sse"
